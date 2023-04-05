@@ -1,6 +1,6 @@
-import { scrape } from './browser.js';
+import { scrape } from "../utils/browser.js";
 
-const BASE_URL = 'https://www.pawpeds.com/db/';
+const BASE_URL = "https://www.pawpeds.com/db/";
 
 const getUrl = {
   total: () => `${BASE_URL}?a=ra&g=4&p=ben`,
@@ -10,9 +10,9 @@ const getUrl = {
 
 const getTotalNumber = async (page) => {
   return page.evaluate(async () => {
-    const href = document.querySelector('tr > td > a')?.href;
+    const href = document.querySelector("tr > td > a")?.href;
     const urlParams = new URLSearchParams(href);
-    return +urlParams.get('id');
+    return +urlParams.get("id");
   });
 };
 
@@ -21,21 +21,21 @@ const getHealthInfo = async (page) => {
     let result = null;
     let hasHCMInfo = false;
 
-    const rows = document.querySelectorAll('table tr');
+    const rows = document.querySelectorAll("table tr");
     rows.forEach((row) => {
       const { innerText } = row;
 
       if (hasHCMInfo) {
-        if (innerText.startsWith('Health Program:')) {
+        if (innerText.startsWith("Health Program:")) {
           hasHCMInfo = false;
           return;
         }
-        if (innerText.startsWith('Result')) {
-          result = innerText.replace('Result\t', '');
+        if (innerText.startsWith("Result")) {
+          result = innerText.replace("Result\t", "");
         }
       }
 
-      if (innerText === 'Health Program: Hypertrophic Cardiomyopathy') {
+      if (innerText === "Health Program: Hypertrophic Cardiomyopathy") {
         hasHCMInfo = true;
       }
     });
@@ -49,22 +49,22 @@ const getCatInfo = async (page) => {
     // get parents info
     let sire = null;
     let dam = null;
-    const parents = document.querySelectorAll('.siredamInPedigree');
+    const parents = document.querySelectorAll(".siredamInPedigree");
     if (parents.length === 2) {
       const sireHref = new URLSearchParams(
-        parents[0].parentElement.querySelector('a').href
+        parents[0].parentElement.querySelector("a").href
       );
-      sire = +sireHref.get('id');
+      sire = +sireHref.get("id");
       const damHref = new URLSearchParams(
-        parents[1].parentElement.querySelector('a').href
+        parents[1].parentElement.querySelector("a").href
       );
-      dam = +damHref.get('id');
+      dam = +damHref.get("id");
     }
 
     // get cat info
     let name = null;
     let sex = null;
-    const title = document.querySelector('tr > th').innerText.split(',');
+    const title = document.querySelector("tr > th").innerText.split(",");
 
     title.forEach((part, index) => {
       part = part.trim();
@@ -72,7 +72,7 @@ const getCatInfo = async (page) => {
         name = part;
       }
 
-      if (part === 'M' || part === 'F') {
+      if (part === "M" || part === "F") {
         sex = part;
       }
     });
