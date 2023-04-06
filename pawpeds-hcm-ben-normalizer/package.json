@@ -1,0 +1,16 @@
+{
+  "name": "pawpeds-hcm-ben-normalizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prettier": "^2.8.7",
+    "puppeteer": "^19.8.3"
+  }
+}
