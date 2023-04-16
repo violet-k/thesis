@@ -1,23 +1,23 @@
-import { scrape } from "./browser.js";
-const BASE_URL = "https://www.pawpeds.com/db/";
+import { scrape } from './browser.js';
+const BASE_URL = 'https://www.pawpeds.com/db/';
 
 const statusActions = {
   clarify: [
-    "result registered but not public yet",
-    "other diagnosis",
-    "other",
-    "no diagnosis",
-    "no assessment",
-    "equivocal",
+    'result registered but not public yet',
+    'other diagnosis',
+    'other',
+    'no diagnosis',
+    'no assessment',
+    'equivocal',
   ],
-  remove: ["rcm"],
+  remove: ['rcm'],
 };
 
-const normalizeStatus = (status = "") => {
+const normalizeStatus = (status = '') => {
   if (
-    new RegExp(["hcm", "severe", "moderate", "mild"].join("|")).test(status)
+    new RegExp(['hcm', 'severe', 'moderate', 'mild'].join('|')).test(status)
   ) {
-    return "HCM";
+    return 'HCM';
   }
 
   return status;
@@ -28,21 +28,21 @@ const getHealthResults = async (page) => {
     let result = [];
     let hasHCMInfo = false;
 
-    const rows = document.querySelectorAll("table tr");
+    const rows = document.querySelectorAll('table tr');
     rows.forEach((row) => {
       const { innerText } = row;
 
       if (hasHCMInfo) {
-        if (innerText.startsWith("Health Program:")) {
+        if (innerText.startsWith('Health Program:')) {
           hasHCMInfo = false;
           return;
         }
-        if (innerText.startsWith("Result")) {
-          result.push(innerText.replace("Result\t", ""));
+        if (innerText.startsWith('Result')) {
+          result.push(innerText.replace('Result\t', ''));
         }
       }
 
-      if (innerText === "Health Program: Hypertrophic Cardiomyopathy") {
+      if (innerText === 'Health Program: Hypertrophic Cardiomyopathy') {
         hasHCMInfo = true;
       }
     });
