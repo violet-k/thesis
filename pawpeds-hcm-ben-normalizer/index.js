@@ -42,7 +42,9 @@ try {
       return;
     }
 
-    if (sire ^ dam) {
+    const sireIsEmpty = sire === '';
+    const damIsEmpty = dam === '';
+    if (sireIsEmpty ^ damIsEmpty) {
       sire = '';
       dam = '';
     }
