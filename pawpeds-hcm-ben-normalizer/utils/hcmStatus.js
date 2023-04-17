@@ -1,4 +1,4 @@
-import { scrape } from './browser.js';
+import { scrape } from '../../pawpeds-hcm-ben-parser/utils/browser.js';
 const BASE_URL = 'https://www.pawpeds.com/db/';
 
 const statusActions = {

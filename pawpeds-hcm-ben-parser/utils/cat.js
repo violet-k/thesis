@@ -1,14 +1,14 @@
-import fs from "fs";
-import { PawpedsBenApi } from "../api/pawpedsBenApi.js";
+import fs from 'fs';
+import { PawpedsBenApi } from '../api/pawpedsBenApi.js';
 
-const FILENAME = "results.csv";
-const headers = ["ID", "Name", "Sex", "Sire", "Dam", "HCM"];
+const FILENAME = 'results.csv';
+const headers = ['ID', 'Name', 'Sex', 'Sire', 'Dam', 'HCM'];
 
-const stream = fs.createWriteStream(FILENAME, { flags: "a" });
-stream.write(`${headers.join(",")}\n`);
+const stream = fs.createWriteStream(FILENAME, { flags: 'a' });
+stream.write(`${headers.join(',')}\n`);
 
 const saveToFile = async ({ id, name, sex, sire, dam, hcm }) => {
-  stream.write(`${[id, name, sex, sire, dam, hcm].join(",")}\n`);
+  stream.write(`${[id, name, sex, sire, dam, hcm].join(',')}\n`);
 };
 
 const scrapeCat = async (id) => {
