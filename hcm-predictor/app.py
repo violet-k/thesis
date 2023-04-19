@@ -16,52 +16,38 @@ class App:
     def close(self):
         self.driver.close()
 
-    def create_friendship(self, person1_name, person2_name):
+    def test(self):
         with self.driver.session(database="neo4j") as session:
-            # Write transactions allow the driver to handle retries and transient errors
             result = session.execute_write(
-                self._create_and_return_friendship, person1_name, person2_name)
+                self.get_paths_with_2_plus_HCM
+            )
             for row in result:
-                print("Created friendship between: {p1}, {p2}".format(
-                    p1=row['p1'], p2=row['p2']))
+                print(row)
 
     @staticmethod
-    def _create_and_return_friendship(tx, person1_name, person2_name):
-        # To learn more about the Cypher syntax, see https://neo4j.com/docs/cypher-manual/current/
-        # The Reference Card is also a good resource for keywords https://neo4j.com/docs/cypher-refcard/current/
-        query = (
-            "CREATE (p1:Person { name: $person1_name }) "
-            "CREATE (p2:Person { name: $person2_name }) "
-            "CREATE (p1)-[:KNOWS]->(p2) "
-            "RETURN p1, p2"
-        )
-        result = tx.run(query, person1_name=person1_name,
-                        person2_name=person2_name)
+    def get_paths_with_2_plus_HCM(tx):
+        query = """
+            MATCH (leaf:Cat)
+            WHERE NOT (leaf)-[:SIRE|DAM]->()
+            CALL apoc.path.spanningTree(leaf, {relationshipFilter: "<SIRE|<DAM", minLevel: 1})
+            YIELD path
+            WITH path, length(path) as path_length, [node in nodes(path) WHERE node.HCM = "HCM"] as hcm_nodes
+            WHERE size(hcm_nodes) > 1
+            WITH path, path_length
+            ORDER BY path_length DESC
+            UNWIND nodes(path) AS n
+            OPTIONAL MATCH (n)<-[:SIRE]-(sire) 
+            OPTIONAL MATCH (n)<-[:DAM]-(dam)
+            RETURN n, sire, dam;
+        """
+        result = tx.run(query)
         try:
-            return [{"p1": row["p1"]["name"], "p2": row["p2"]["name"]}
-                    for row in result]
+            return [row for row in result]
         # Capture any errors along with the query and data for traceability
         except ServiceUnavailable as exception:
             logging.error("{query} raised an error: \n {exception}".format(
                 query=query, exception=exception))
             raise
-
-    def find_person(self, person_name):
-        with self.driver.session(database="neo4j") as session:
-            result = session.execute_read(
-                self._find_and_return_person, person_name)
-            for row in result:
-                print("Found person: {row}".format(row=row))
-
-    @staticmethod
-    def _find_and_return_person(tx, person_name):
-        query = (
-            "MATCH (p:Person) "
-            "WHERE p.name = $person_name "
-            "RETURN p.name AS name"
-        )
-        result = tx.run(query, person_name=person_name)
-        return [row["name"] for row in result]
 
 
 if __name__ == "__main__":
@@ -69,6 +55,5 @@ if __name__ == "__main__":
     user = os.environ.get('DATABASE_USER')
     password = os.environ.get('DATABASE_PASSWORD')
     app = App(uri, user, password)
-    app.create_friendship("Alice", "David")
-    app.find_person("Alice")
+    app.test()
     app.close()
