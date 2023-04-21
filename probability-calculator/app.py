@@ -45,12 +45,12 @@ def calculate_hcm_inheritance_prob(child_id, pedigree_df):
         # Neither parent has HCM
         prob = 0.25
 
-    # # Recursively calculate the probability of inheriting HCM from the ancestors
-    # if sire_id and dam_id:
-    #     prob *= calculate_hcm_inheritance_prob(sire_id, pedigree_df) * calculate_hcm_inheritance_prob(dam_id, pedigree_df)
+    # Recursively calculate the probability of inheriting HCM from the ancestors
+    if sire_id and dam_id:
+        prob *= calculate_hcm_inheritance_prob(sire_id, pedigree_df) * calculate_hcm_inheritance_prob(dam_id, pedigree_df)
 
     return prob
 
 
 data['Probability'] = data.apply(lambda row : calculate_hcm_inheritance_prob(row['ID'], data), axis=1)
-data.to_csv('results.csv', index=False)
+data.to_csv('results_2.csv', index=False)
