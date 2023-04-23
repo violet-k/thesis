@@ -3,54 +3,32 @@ import pandas as pd
 import numpy as np
 
 df = pd.read_csv("converted.csv")
-data = df
 
 
-def calculate_hcm_inheritance_prob(child_id, pedigree_df):
-    """
-    Calculate the probability of a child inheriting HCM from its parents,
-    taking into account the HCM diagnoses of ancestors in the pedigree.
+def calculate_hcm_probability(row, df):
+    sire_id, dam_id = row["Sire_ID"], row["Dam_ID"]
 
-    Args:
-        child_id (str): The ID of the child in the pedigree.
-        pedigree_df (pd.DataFrame): The pedigree data in a pandas DataFrame.
+    if pd.isna(sire_id) and pd.isna(dam_id):
+        return 0.0
 
-    Returns:
-        The probability of the child inheriting HCM.
-    """
+    sire_prob, dam_prob = 0.0, 0.0
 
-    child = pedigree_df.loc[pedigree_df['ID'] == child_id]
-    child_hcm = child['Has_HCM'].item()
-    
-    # Get the IDs of the parents
-    sire_id = child['Sire_ID'].item()
-    if math.isnan(sire_id):
-        prob =  0.75 if child_hcm else 0.25
-        return prob
+    if not pd.isna(sire_id):
+        sire_id = int(sire_id)
+        sire_row = df[df["ID"] == sire_id].iloc[0]
+        sire_prob = 0.5 * (
+            float(sire_row["Sire_has_HCM"]) + calculate_hcm_probability(sire_row, df)
+        )
 
-    dam_id = child['Dam_ID'].item()
+    if not pd.isna(dam_id):
+        dam_id = int(dam_id)
+        dam_row = df[df["ID"] == dam_id].iloc[0]
+        dam_prob = 0.5 * (
+            float(dam_row["Dam_has_HCM"]) + calculate_hcm_probability(dam_row, df)
+        )
 
-    # Get the HCM diagnoses of the parents
-    sire_hcm = child['Sire_has_HCM'].item()
-    dam_hcm = child['Dam_has_HCM'].item()
-
-    # Calculate the probability of inheriting HCM from the parents
-    if sire_hcm and dam_hcm:
-        # Both parents have HCM
-        prob = 0.75
-    elif sire_hcm or dam_hcm:
-        # One parent has HCM
-        prob = 0.5
-    else:
-        # Neither parent has HCM
-        prob = 0.25
-
-    # Recursively calculate the probability of inheriting HCM from the ancestors
-    if sire_id and dam_id:
-        prob *= calculate_hcm_inheritance_prob(sire_id, pedigree_df) * calculate_hcm_inheritance_prob(dam_id, pedigree_df)
-
-    return prob
+    return sire_prob + dam_prob
 
 
-data['Probability'] = data.apply(lambda row : calculate_hcm_inheritance_prob(row['ID'], data), axis=1)
-data.to_csv('results_2.csv', index=False)
+df["Probability"] = df.apply(lambda row: calculate_hcm_probability(row, df), axis=1)
+df.to_csv("results.csv", index=False)

@@ -1,34 +1,48 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import OneHotEncoder
-from xgboost import XGBClassifier
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.metrics import accuracy_score
 
-# Load the data
-df = pd.read_csv('results_prob_2.csv')
+# Read the CSV file
+df = pd.read_csv("results.csv")
+
+print(df["Sex"].isnull().values.any())
 
 # Extract the required columns
-df = df[['Sex', 'Has_HCM', 'Sire_has_HCM', 'Dam_has_HCM', 'Probability']]
+data = df[
+    [
+        "Sex",
+        "Has_HCM",
+        "Sire_has_HCM",
+        "Dam_has_HCM"
+        #  , "Probability"
+    ]
+]
 
-# # Load the data
-# df = pd.read_csv('results.csv')
 
-# # Extract the required columns
-# df = df[['Sex', 'Has_HCM', 'Sire_has_HCM', 'Dam_has_HCM']]
+# Convert the 'Sex' column to numeric values (e.g., 0 for 'm' and 1 for 'f')
+data["Sex"] = data["Sex"].map({"m": 0, "f": 1})
 
-# Convert categorical variables to one-hot encoded variables
-encoder = OneHotEncoder(sparse=False)
-df_encoded = pd.DataFrame(encoder.fit_transform(df[['Sex']]))
-df_encoded.columns = encoder.get_feature_names(['Sex'])
-df = pd.concat([df_encoded, df.drop('Sex', axis=1)], axis=1)
+# Fill missing values
+data["Sex"].fillna(data["Sex"].mode()[0], inplace=True)
+data["Sire_has_HCM"].fillna(data["Sire_has_HCM"].mean(), inplace=True)
+data["Dam_has_HCM"].fillna(data["Dam_has_HCM"].mean(), inplace=True)
+# data["Probability"].fillna(data["Probability"].mean(), inplace=True)
 
 # Split the data into train and test sets
-X_train, X_test, y_train, y_test = train_test_split(df.drop('Has_HCM', axis=1), df['Has_HCM'], test_size=0.2, random_state=42)
+X = data.drop("Has_HCM", axis=1)
+y = data["Has_HCM"]
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
 
-# Train the model
-model = XGBClassifier()
+# Train a Gradient Boosted Decision Tree model
+model = GradientBoostingClassifier()
 model.fit(X_train, y_train)
 
-# Evaluate the model
+# Predict the 'Has_HCM' value for the test set
 y_pred = model.predict(X_test)
-accuracy = (y_pred == y_test).mean()
-print(f"Accuracy: {accuracy}")
+
+# Calculate the accuracy of the model
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy:", accuracy)

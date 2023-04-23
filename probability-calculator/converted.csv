@@ -5678,6 +5678,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 274742,f,false,,false,,false
 274856,f,false,234169,true,120870,false
 274901,f,false,227552,false,386066,false
+274903,f,false,,false,,false
 274941,f,false,,false,,false
 274945,f,false,102434,false,307980,false
 274986,f,false,268643,false,274074,false
@@ -16024,6 +16025,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 768366,m,false,768362,false,768365,false
 768370,f,false,148344,false,122277,false
 768372,m,false,,false,,false
+768381,m,false,,false,,false
 768389,m,false,,false,,false
 768393,f,false,638567,false,281020,false
 768400,f,false,377844,false,238405,false
@@ -26116,7 +26118,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 914263,f,false,914253,true,914254,false
 914264,f,false,,false,,false
 914265,f,false,,false,,false
-914307,f,false,940046,false,919954,false
+914307,f,false,924588,false,919954,false
 914444,m,false,908462,false,904020,false
 914455,m,false,,false,,false
 914456,m,false,,false,,false
@@ -26883,6 +26885,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 924570,m,false,,false,,false
 924576,f,false,,false,,false
 924577,m,false,,false,,false
+924588,m,false,,false,,false
 924597,f,false,922405,false,924598,false
 924598,f,false,,false,,false
 924654,m,false,,false,,false
@@ -27765,7 +27768,6 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 939980,f,false,,false,,false
 939985,f,false,,false,,false
 939997,f,false,,false,,false
-940046,,false,,false,,false
 940085,f,false,,false,,false
 940129,f,false,905362,false,937917,false
 940191,m,true,899292,false,899298,false
@@ -32873,7 +32875,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1061814,m,true,932182,false,1080733,false
 1061816,f,false,,false,,false
 1061817,m,false,979429,false,981812,false
-1061819,m,false,1172736,false,980712,false
+1061819,m,false,979431,false,980712,false
 1061821,m,false,906307,false,901915,false
 1061825,f,false,,false,,false
 1061826,f,false,919821,false,1176351,false
@@ -33968,9 +33970,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1084170,f,false,854134,false,768017,false
 1084173,f,false,,false,,false
 1084195,f,false,520690,false,855204,false
-1084196,m,false,1084197,false,1084198,false
-1084197,,false,,false,,false
-1084198,,false,,false,,false
+1084196,m,false,768381,false,274903,false
 1084200,f,false,856302,false,987025,false
 1084201,m,false,962079,false,831990,false
 1084203,f,false,962079,false,831990,false
@@ -35405,7 +35405,6 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1099336,f,false,911865,false,1099337,false
 1099337,f,false,983552,false,923931,false
 1099338,f,false,911865,false,1099337,false
-1099340,,false,,false,,false
 1099349,m,false,,false,,false
 1099350,f,false,1099351,false,1099352,false
 1099351,m,false,,false,,false
@@ -38415,8 +38414,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1144820,m,false,,false,,false
 1144821,f,false,,false,,false
 1144823,m,true,932394,false,912144,false
-1144828,m,false,1144829,false,985449,false
-1144829,,false,,false,,false
+1144828,m,false,899460,false,985449,false
 1144830,f,false,923378,false,929730,false
 1144831,f,false,979617,false,1144830,false
 1144832,f,false,915286,true,929319,false
@@ -40884,8 +40882,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1169085,f,false,1091913,false,1091912,false
 1169086,f,false,979545,false,951328,false
 1169087,f,false,971225,false,979294,false
-1169088,f,false,961802,false,1169089,false
-1169089,,false,,false,,false
+1169088,f,false,961802,false,1272177,false
 1169090,f,false,979545,false,1169091,false
 1169091,f,false,,false,,false
 1169092,m,false,1156644,false,1156629,false
@@ -41572,7 +41569,6 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1172695,f,false,,false,,false
 1172697,f,false,940833,false,908566,false
 1172731,m,false,988977,false,1143033,false
-1172736,,false,,false,,false
 1172769,m,false,1086280,false,1096899,false
 1172772,m,false,1086280,false,1096899,false
 1172773,f,false,1086280,false,1096899,false
@@ -44213,7 +44209,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1200849,m,false,763068,false,763066,false
 1200855,m,false,,false,,false
 1200856,m,false,1079531,false,913583,false
-1200857,m,false,961802,false,1169089,false
+1200857,m,false,961802,false,1272177,false
 1200858,m,false,,false,,false
 1200859,f,false,,false,,false
 1200878,f,false,,false,,false
@@ -46145,7 +46141,6 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1221702,f,false,843559,false,1145020,false
 1221719,m,false,1130919,false,1221720,false
 1221720,f,false,,false,,false
-1221754,,false,,false,,false
 1221757,f,false,905286,false,1069944,false
 1221767,m,false,894332,false,1108179,false
 1221771,f,false,1160675,false,1131488,false
@@ -46673,7 +46668,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1227363,m,false,1227364,false,271384,false
 1227364,m,false,,false,,false
 1227374,f,false,,false,,false
-1227375,m,false,1100627,false,1099340,false
+1227375,m,false,1100627,false,943849,false
 1227376,m,false,,false,,false
 1227381,m,false,,false,,false
 1227387,f,false,1135763,false,945191,false
@@ -48019,6 +48014,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1245369,f,false,1171778,false,943683,false
 1245373,m,false,,false,,false
 1245377,m,false,,false,,false
+1245389,f,false,,false,,false
 1245396,f,false,1138088,false,1096204,false
 1245397,m,false,1138088,false,1096204,false
 1245398,m,false,1147191,false,1182299,false
@@ -48052,7 +48048,6 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1245647,m,false,1144539,false,971805,false
 1245667,f,false,989010,false,1176640,false
 1245669,m,false,,false,,false
-1245672,,false,,false,,false
 1245688,f,false,1156644,false,918289,false
 1245721,m,false,1156044,false,1170648,false
 1245724,m,false,1174210,false,1174209,false
@@ -48448,7 +48443,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1248171,m,false,1176610,false,1160032,false
 1248247,m,false,,false,,false
 1248250,f,false,,false,,false
-1248271,m,false,1221754,false,1248272,false
+1248271,m,false,1361054,false,1248272,false
 1248272,f,false,,false,,false
 1248273,f,false,1186699,false,1102308,false
 1248274,m,false,1080492,false,953944,false
@@ -49695,7 +49690,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1260095,m,false,1102894,false,991321,false
 1260096,f,false,953320,false,806750,false
 1260097,f,false,982477,false,1260096,false
-1260098,m,false,961802,false,1169089,false
+1260098,m,false,961802,false,1272177,false
 1260099,f,false,1260095,false,1260097,false
 1260144,f,false,,false,,false
 1260145,f,false,,false,,false
@@ -51052,6 +51047,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1272167,f,false,,false,,false
 1272168,m,false,1225971,false,1272167,false
 1272173,f,false,1245721,false,1084762,false
+1272177,f,false,,false,,false
 1272182,f,false,859144,false,1139220,false
 1272183,f,false,859144,false,1139220,false
 1272184,m,false,859144,false,1139220,false
@@ -55737,7 +55733,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1302054,m,false,979266,false,955920,false
 1302055,f,false,1217414,false,1274864,false
 1302056,f,false,1133247,false,1164567,false
-1302057,m,false,1242568,false,1245672,false
+1302057,m,false,1242568,false,1245389,false
 1302058,f,false,1273222,false,979489,false
 1302059,f,false,933143,false,1302060,false
 1302060,f,false,,false,,false
@@ -56479,8 +56475,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1308720,m,false,1308721,false,1308722,false
 1308721,m,false,,false,,false
 1308722,f,false,,false,,false
-1308723,m,false,1288674,false,1308724,false
-1308724,,false,,false,,false
+1308723,m,false,1288674,false,1637589,false
 1308725,f,false,1278498,false,1278499,false
 1308727,m,false,1350246,false,1308728,false
 1308728,f,false,,false,,false
@@ -59755,6 +59750,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1330924,m,false,,false,,false
 1330925,m,false,,false,,false
 1330967,m,false,,false,,false
+1330993,f,false,,false,,false
 1330995,f,false,,false,,false
 1331032,f,false,105641,false,810881,false
 1331037,m,false,,false,,false
@@ -60593,8 +60589,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1340339,f,false,1088079,false,1249684,false
 1340340,f,false,1293947,false,1340341,false
 1340341,f,false,,false,,false
-1340342,m,false,1340343,false,1340344,false
-1340343,,false,,false,,false
+1340342,m,false,978063,false,1340344,false
 1340344,f,false,,false,,false
 1340345,f,false,1215036,false,1340346,false
 1340346,f,false,,false,,false
@@ -66068,8 +66063,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1388497,m,false,1262128,false,1300911,false
 1388560,f,false,,false,,false
 1388702,m,false,1135528,false,1329797,false
-1388703,f,false,1388704,false,1388705,false
-1388704,,false,,false,,false
+1388703,f,false,1450602,false,1388705,false
 1388705,f,false,,false,,false
 1388706,f,false,1318013,false,1318012,false
 1388758,m,false,1303300,false,1263103,false
@@ -67966,8 +67960,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1409889,f,false,,false,,false
 1409895,m,false,1275955,false,1374538,false
 1409896,f,false,1275955,false,1374538,false
-1409934,m,false,981724,false,1409935,false
-1409935,,false,,false,,false
+1409934,m,false,981724,false,1487604,false
 1409937,f,false,1250150,false,1324426,false
 1409938,f,false,1394219,false,1409939,false
 1409939,f,false,,false,,false
@@ -69894,8 +69887,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1429688,f,false,1289211,false,1289451,false
 1429705,f,false,1378211,false,1378237,false
 1429712,f,false,,false,,false
-1429736,f,false,1243155,false,1429748,false
-1429748,,false,,false,,false
+1429736,f,false,1243155,false,1330993,false
 1429749,m,false,,false,,false
 1429829,f,false,,false,,false
 1429866,f,false,1252832,false,1211063,false
@@ -70106,8 +70098,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1433386,f,false,1302049,false,1200750,false
 1433387,m,false,1186699,false,1433388,false
 1433388,f,false,,false,,false
-1433389,m,false,1433390,false,1248279,false
-1433390,,false,,false,,false
+1433389,m,false,1248278,false,1248279,false
 1433449,m,false,1308345,false,1195053,false
 1433460,f,false,1363623,false,894839,false
 1433462,f,false,1363623,false,1277688,false
@@ -71971,6 +71962,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1450513,m,false,,false,,false
 1450538,m,false,1409966,false,1381498,false
 1450601,f,false,1405301,false,1375073,false
+1450602,m,false,,false,,false
 1450635,m,false,1251640,false,1182743,false
 1450637,f,false,1299060,false,1322924,false
 1450638,f,false,1359923,false,1408164,false
@@ -71997,7 +71989,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1450893,f,false,,false,,false
 1450952,f,false,1297809,false,1333440,false
 1450953,f,false,1437969,false,1450954,false
-1450954,,false,,false,,false
+1450954,f,false,,false,,false
 1450959,m,false,,false,,false
 1450960,m,false,,false,,false
 1450966,f,false,,false,,false
@@ -72455,8 +72447,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1456135,m,false,1374963,false,1374964,false
 1456136,f,false,,false,,false
 1456137,m,false,1363923,false,1300362,false
-1456138,f,false,1334348,false,1456139,false
-1456139,,false,,false,,false
+1456138,f,false,1334348,false,1639883,false
 1456140,f,false,1342475,false,1361176,false
 1456141,f,false,1348566,false,1344091,false
 1456142,m,false,1456143,false,1456144,false
@@ -73872,8 +73863,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1467087,f,false,1266510,false,1467088,false
 1467088,f,false,,false,,false
 1467089,f,false,1266510,false,1277425,false
-1467090,f,false,1467091,false,1467092,false
-1467091,,false,,false,,false
+1467090,f,false,1348480,false,1467092,false
 1467092,f,false,,false,,false
 1467093,f,false,1467094,false,1467095,false
 1467094,m,false,,false,,false
@@ -74689,8 +74679,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1471212,m,false,1471213,false,1471214,true
 1471213,m,false,,false,,false
 1471214,f,true,1434567,false,1467043,false
-1471215,f,false,1471216,false,1324515,false
-1471216,,false,,false,,false
+1471215,f,false,1372904,false,1324515,false
 1471217,f,false,1471218,false,1471219,false
 1471218,m,false,,false,,false
 1471219,f,false,1539269,false,1539270,false
@@ -76777,6 +76766,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1487523,m,false,1298610,false,1435284,false
 1487527,m,false,1323402,false,1393953,false
 1487603,f,false,,false,,false
+1487604,f,false,,false,,false
 1487605,f,false,,false,,false
 1487608,m,false,,false,,false
 1487614,f,false,1419522,false,1316715,false
@@ -77239,8 +77229,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1492897,m,false,,false,,false
 1492898,f,false,,false,,false
 1492899,f,false,1396376,false,1360147,false
-1492904,f,false,1492905,false,1492916,false
-1492905,,false,,false,,false
+1492904,f,false,1373548,false,1492916,false
 1492906,f,false,,false,,false
 1492916,f,false,1344473,false,1344218,false
 1492917,f,false,1373548,false,1492918,false
@@ -77672,7 +77661,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1496714,f,false,1360190,false,1335829,false
 1496715,f,false,1145919,false,1241383,false
 1496716,m,false,,false,,false
-1496717,m,false,1496718,false,1456139,false
+1496717,m,false,1496718,false,1639883,false
 1496718,m,false,,false,,false
 1496719,f,false,1340353,false,1372914,false
 1496720,f,false,1496721,false,1277541,false
@@ -77731,8 +77720,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1497237,f,false,1497238,false,1497239,false
 1497238,m,false,,false,,false
 1497239,f,false,,false,,false
-1497240,f,false,1360302,false,1497241,false
-1497241,,false,,false,,false
+1497240,f,false,1360302,false,1360299,false
 1497333,f,false,1471799,false,1368548,false
 1497367,f,false,1351083,false,1318212,false
 1497369,m,false,1351083,false,1318212,false
@@ -78085,8 +78073,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1500257,f,false,1376609,false,1500258,false
 1500258,f,false,,false,,false
 1500259,f,false,1379706,false,1419291,false
-1500260,f,false,1500261,false,1500262,false
-1500261,,false,,false,,false
+1500260,f,false,1506927,false,1500262,false
 1500262,f,false,,false,,false
 1500263,f,false,1448717,false,1385193,false
 1500264,f,false,1500198,false,1500265,false
@@ -78121,6 +78108,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1500497,f,false,1469773,false,1419425,false
 1500499,m,false,1419533,false,1469371,false
 1500500,f,false,1419533,false,1371668,false
+1500611,m,false,,false,,false
 1500624,f,false,1396714,false,1314555,false
 1500638,f,false,1468529,false,1484024,false
 1500655,f,false,,false,,false
@@ -79925,9 +79913,8 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1516607,m,false,1273208,false,1298482,false
 1516608,f,false,1442729,false,1516609,false
 1516609,f,false,1635688,false,1308891,false
-1516610,f,false,1516611,false,1516612,false
+1516610,f,false,1516611,false,1462595,false
 1516611,m,false,,false,,false
-1516612,,false,,false,,false
 1516613,f,false,1516614,false,1516615,false
 1516614,m,false,,false,,false
 1516615,f,false,,false,,false
@@ -81798,8 +81785,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1530909,f,false,967719,false,1358811,false
 1530910,f,false,1223000,false,1223001,false
 1530911,f,false,1527489,false,1530910,false
-1530912,f,false,1530913,false,1530914,false
-1530913,,false,,false,,false
+1530912,f,false,1624009,false,1530914,false
 1530914,f,false,,false,,false
 1530915,f,false,1220246,false,1530916,false
 1530916,f,false,,false,,false
@@ -82496,8 +82482,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1540957,f,false,1343276,false,1343271,false
 1540958,f,false,1510270,false,1510322,false
 1540961,f,false,,false,,false
-1540962,f,false,1540963,false,1540964,false
-1540963,,false,,false,,false
+1540962,f,false,1545586,false,1540964,false
 1540964,f,false,,false,,false
 1540965,f,false,1462603,false,1413709,false
 1540966,f,false,1462603,false,1413709,false
@@ -83955,8 +83940,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1552754,f,false,1334422,false,1360315,false
 1552756,m,false,,false,,false
 1552757,f,false,,false,,false
-1552758,f,false,1519863,false,1552759,false
-1552759,,false,,false,,false
+1552758,f,false,1519863,false,1519861,false
 1552760,m,false,1450960,false,1520671,false
 1552761,m,false,1514082,false,1552762,false
 1552762,f,false,,false,,false
@@ -84888,8 +84872,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1559884,f,false,1559885,false,1559886,false
 1559885,m,false,,false,,false
 1559886,f,false,,false,,false
-1559887,f,false,1559888,false,1559889,false
-1559888,,false,,false,,false
+1559887,f,false,1447475,false,1559889,false
 1559889,f,false,,false,,false
 1559890,f,false,1559891,false,1559892,false
 1559891,m,false,,false,,false
@@ -88172,8 +88155,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1587195,m,false,,false,,false
 1587210,f,false,,false,,false
 1587211,m,false,,false,,false
-1587212,f,false,1534622,false,1587213,false
-1587213,,false,,false,,false
+1587212,f,false,1534622,false,1534614,false
 1587214,f,false,1174103,false,1587215,false
 1587215,f,false,,false,,false
 1587216,f,false,1443091,false,1360772,false
@@ -88319,8 +88301,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1589131,f,false,1589122,false,1589124,false
 1589132,f,false,1492097,false,1442539,false
 1589133,f,false,1502117,false,1163639,false
-1589134,f,false,1420763,false,1589135,false
-1589135,,false,,false,,false
+1589134,f,false,1420763,false,1642778,false
 1589143,f,false,1331836,false,1156475,false
 1589295,f,false,1589296,false,1589297,false
 1589296,m,false,,false,,false
@@ -88779,8 +88760,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1594197,m,false,1594198,false,1594199,false
 1594198,m,false,,false,,false
 1594199,f,false,,false,,false
-1594220,f,false,1594221,false,1463509,false
-1594221,,false,,false,,false
+1594220,f,false,1500611,false,1463509,false
 1594222,m,false,1502116,false,1552130,false
 1594223,f,false,1474062,false,1506255,false
 1594224,m,false,1380560,false,1149983,false
@@ -89122,11 +89102,10 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1596886,m,false,1469240,false,1469241,false
 1596888,m,false,1342456,false,1596889,false
 1596889,f,false,,false,,false
-1596891,f,false,1596892,false,1596893,false
-1596892,,false,,false,,false
+1596891,f,false,1524723,false,1596893,false
 1596893,f,false,,false,,false
 1596894,f,false,1322293,false,1562575,false
-1596900,m,false,1575847,false,1552759,false
+1596900,m,false,1575847,false,1519861,false
 1596901,f,false,1502277,false,1382027,false
 1596902,f,false,1363917,false,1256380,false
 1596903,f,false,1502277,false,1496714,false
@@ -89177,7 +89156,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1597216,f,false,,false,,false
 1597217,f,false,1593199,false,1593200,false
 1597218,f,false,1552760,false,1575846,false
-1597219,f,false,1519864,false,1552759,false
+1597219,f,false,1519864,false,1519861,false
 1597229,f,false,390404,false,1076872,false
 1597237,f,false,1360789,false,1277538,false
 1597245,f,false,844930,false,1131150,false
@@ -90167,8 +90146,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1605627,f,false,1605614,false,1605603,false
 1605628,f,false,1273210,false,1274913,false
 1605629,f,false,1562552,false,1594601,false
-1605630,f,false,1562552,false,1605631,false
-1605631,,false,,false,,false
+1605630,f,false,1562552,false,1530912,false
 1605634,m,false,1516687,false,1605635,false
 1605635,f,false,,false,,false
 1605636,f,false,1586378,false,1586380,false
@@ -91598,7 +91576,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1623005,f,false,1495066,false,1429712,false
 1623025,f,false,1552438,false,1510300,false
 1623126,m,false,,false,,false
-1623430,f,false,1562552,false,1605631,false
+1623430,f,false,1562552,false,1530912,false
 1623431,m,false,1565741,false,1623432,false
 1623432,f,false,,false,,false
 1623433,f,false,1516693,false,1517136,false
@@ -91651,6 +91629,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1623800,f,false,1309454,false,1471713,false
 1623803,m,false,1561655,false,1517938,false
 1623988,m,false,,false,,false
+1624009,m,false,,false,,false
 1624043,f,false,1560288,false,1594892,false
 1624095,f,false,1624096,false,1624097,false
 1624096,m,false,,false,,false
@@ -92026,6 +92005,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1626299,f,false,1626300,false,1379464,false
 1626300,m,false,,false,,false
 1626301,f,false,1625678,false,1625679,false
+1626404,f,false,,false,,false
 1626435,m,false,1280712,false,1626436,false
 1626436,f,false,,false,,false
 1626440,f,false,1569038,false,1500271,false
@@ -92331,8 +92311,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1630397,f,false,1359734,false,1094621,false
 1630399,f,false,1299760,false,1367730,false
 1630400,m,false,1526915,false,1526919,false
-1630409,f,false,1439979,false,1630410,false
-1630410,,false,,false,,false
+1630409,f,false,1439979,false,1626404,false
 1630411,f,false,1630412,false,1465704,false
 1630412,m,false,,false,,false
 1630413,f,false,1546430,false,1509104,false
@@ -92758,8 +92737,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1636419,m,false,,false,,false
 1636420,m,false,1464675,false,1331473,false
 1636421,f,false,1232382,false,1304878,false
-1636422,f,false,1554136,false,1636423,false
-1636423,,false,,false,,false
+1636422,f,false,1554136,false,1517251,false
 1636424,m,false,1512804,false,1548402,false
 1636489,f,false,1483982,false,1405707,false
 1636490,m,false,1407704,false,1451471,false
@@ -92943,6 +92921,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1637380,f,false,1437708,false,1271647,false
 1637400,m,false,1308037,false,1417099,false
 1637401,f,false,1412618,false,1474386,false
+1637589,f,false,,false,,false
 1637638,m,false,1566612,false,1637639,false
 1637639,f,false,,false,,false
 1637640,f,false,1165139,false,1165134,false
@@ -93228,6 +93207,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1639771,f,false,,false,,false
 1639776,m,false,,false,,false
 1639822,m,false,888900,false,1516713,false
+1639883,f,false,,false,,false
 1639903,f,false,,false,,false
 1639926,f,false,1532600,false,1505744,false
 1640185,m,false,1581250,false,1331885,false
@@ -93529,6 +93509,7 @@ ID,Sex,Has_HCM,Sire_ID,Sire_has_HCM,Dam_ID,Dam_has_HCM
 1642738,m,false,1445725,false,1462036,false
 1642739,f,false,1445725,false,1462036,false
 1642740,f,false,1555881,false,1515925,false
+1642778,f,false,,false,,false
 1642931,f,false,,false,,false
 1642946,f,false,1501088,false,1474469,false
 1642947,f,false,1501712,false,1501715,false
