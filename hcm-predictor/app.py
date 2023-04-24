@@ -1,12 +1,13 @@
+import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import StratifiedKFold, cross_val_score, train_test_split
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import accuracy_score
 import os
 from dotenv import load_dotenv
 from neo4j import GraphDatabase
 
-load_dotenv() 
+load_dotenv()
 
 # Define the Neo4j connection details
 uri = os.environ.get("NEO4J_URI")
@@ -18,13 +19,13 @@ driver = GraphDatabase.driver(uri, auth=(user, password))
 
 # Define the query to retrieve the Cat nodes with their features
 query = """
-    MATCH (c:Cat) 
-    RETURN 
-    c.ID as ID, 
-    c.Name as Name, 
-    c.Sex as Sex, 
-    c.Sire as Sire, 
-    c.Dam as Dam, 
+    MATCH (c:Cat)
+    RETURN
+    c.ID as ID,
+    c.Name as Name,
+    c.Sex as Sex,
+    c.Sire as Sire,
+    c.Dam as Dam,
     c.HCM as HCM
 """
 
@@ -33,19 +34,17 @@ with driver.session() as session:
     result = session.run(query)
     cat_data = [record for record in result]
 
+# Close the Neo4j driver
+driver.close()
+
 # Split the data into train and test sets, ensuring that each set contains at least 50% of cats with HCM = HCM
 cat_data_train, cat_data_test = train_test_split(
-    cat_data, 
-    test_size=0.2, 
-    stratify=[record["HCM"] for record in cat_data]
+    cat_data, test_size=0.2, stratify=[record["HCM"] for record in cat_data]
 )
 
 # Retrieve the IDs of the cats in each set
 cat_ids_train = [record["ID"] for record in cat_data_train]
 cat_ids_test = [record["ID"] for record in cat_data_test]
-
-# Close the Neo4j driver
-driver.close()
 
 
 # Read the CSV file
@@ -59,19 +58,9 @@ df_train = df[df["ID"].isin(cat_ids_train)]
 df_test = df[df["ID"].isin(cat_ids_test)]
 
 # Extract the required columns
-cols = [
-        "Sex",
-        "Has_HCM",
-        "Sire_has_HCM",
-        "Dam_has_HCM", 
-        "Probability"
-    ]
-data_train = df[
-    cols
-]
-data_test = df[
-    cols
-]
+cols = ["Sex", "Has_HCM", "Sire_has_HCM", "Dam_has_HCM", "Probability"]
+data_train = df[cols]
+data_test = df[cols]
 
 
 # Split the data into train and test sets
@@ -81,13 +70,29 @@ y_train = data_train["Has_HCM"]
 y_test = data_test["Has_HCM"]
 
 
-# Train a Gradient Boosted Decision Tree model
-model = GradientBoostingClassifier()
-model.fit(X_train, y_train)
+# Train a Gradient Boosted Decision Tree model using StratifiedKFold cross-validation
+gbdt = GradientBoostingClassifier(random_state=42)
+cv = StratifiedKFold(n_splits=5, random_state=42, shuffle=True)
+cv_scores = []
 
-# Predict the 'Has_HCM' value for the test set
-y_pred = model.predict(X_test)
+for train_index, test_index in cv.split(X_train, y_train):
+    X_train_fold, X_test_fold = X_train.iloc[train_index], X_train.iloc[test_index]
+    y_train_fold, y_test_fold = y_train.iloc[train_index], y_train.iloc[test_index]
 
-# Calculate the accuracy of the model
+    gbdt.fit(X_train_fold, y_train_fold)
+    y_pred_fold = gbdt.predict(X_test_fold)
+    accuracy = accuracy_score(y_test_fold, y_pred_fold)
+    cv_scores.append(accuracy)
+
+# Fit the model on the entire dataset
+gbdt.fit(X_train, y_train)
+
+# Predict HCM values using the test set
+y_pred = gbdt.predict(X_test)
+
+# Calculate accuracy
 accuracy = accuracy_score(y_test, y_pred)
-print("Accuracy:", accuracy)
+
+print("Cross-validation scores:", cv_scores)
+print("Mean cross-validation score:", np.mean(cv_scores))
+print("Accuracy on test set:", accuracy)
