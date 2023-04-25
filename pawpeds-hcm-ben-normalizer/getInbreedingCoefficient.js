@@ -1,31 +1,55 @@
 import {
-    chunk,
-    executeChunks,
+  chunk,
+  executeChunks,
 } from '../pawpeds-hcm-ben-parser/utils/chunks.js';
 import { CSVFile } from './utils/CSVFile.js';
 import { FILENAME_NORMALIZED, readData } from './utils/file.js';
 
 const BASE_URL = 'https://www.pawpeds.com/db/';
 
-const newFile = new CSVFile(
-    'results_normalized_inbreeding',
-    ['ID', 'Name', 'Sex', 'Sire', 'Dam', 'HCM', 'Inbreeding']
-);
+const inbreedingFile = new CSVFile('results_normalized_inbreeding');
 
-const getInbreedingCoefficient = async (id) => fetch(`https://www.pawpeds.com/db/?a=apici&id=${id}&g=10&p=ben`, {
-    method: 'GET'
-})
-    .then(response => response.json())
-    .then(result => {
-        const inbreedingCoefficient = parseFloat(result[0]);
-        console.log({ id, inbreedingCoefficient });
-        newFile.write([...Object.values(data[id]), inbreedingCoefficient]);
+const getInbreedingCoefficient = async (id) => {
+  console.log({ id });
+  return fetch(`${BASE_URL}?a=apici&id=${id}&g=10&p=ben`, {
+    method: 'GET',
+  })
+    .then((response) => {
+      return response.json();
     })
+    .then((result) => {
+      const inbreedingCoefficient = parseFloat(result[0]);
+      console.log({ id, inbreedingCoefficient });
+      inbreedingFile.write([
+        ...Object.values(normalizedData[id]),
+        inbreedingCoefficient,
+      ]);
+    });
+};
 
-const data = await readData(FILENAME_NORMALIZED);
+const inbreedingData = {};
+const readCallback = (line) => {
+  if (line.startsWith('ID')) {
+    return;
+  }
 
+  let [id, name, sex, sire, dam, hcm, inbreeding] = line
+    .split(',')
+    .map((part) => part.toLowerCase());
+
+  inbreedingData[id] = { id, name, sex, sire, dam, hcm, inbreeding };
+};
+await inbreedingFile.read(readCallback);
+
+// get ids
+const normalizedData = await readData(FILENAME_NORMALIZED);
 let ids = new Set(
-    Object.values(data).map(({ id }) => id)
+  Object.values(normalizedData).reduce((acc, { id }) => {
+    if (!inbreedingData[id]) {
+      acc.push(id);
+    }
+    return acc;
+  }, [])
 );
 ids = [...ids];
 
