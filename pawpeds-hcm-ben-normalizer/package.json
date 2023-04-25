@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "normalize-data": "node normalizeData.js",
-    "fetch-missing-data": "node fetchMissingData.js"
+    "fetch-missing-data": "node fetchMissingData.js",
+    "get-inbreeding-coefficient": "node getInbreedingCoefficient.js"
   },
   "author": "",
   "license": "ISC",
